@@ -1,0 +1,30 @@
+<div class="usuarios">
+    <h1>Listar usuarios</h1>
+    {{#if table}}
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>nome</th>
+                <th>email</th>
+            </tr>
+        </thead>
+        {{#each usuarios}}
+        <tbody>
+        <tr>
+            <td>{{id}}</td>
+            <td>{{nome}}</td>
+            <td>{{email}}</td>
+            <td><button class="button verde">Editar</button></td>
+            <td><button class="button vermelho">Excluir</button></td>
+        </tr>
+        </tbody>
+        {{/each}}
+    </table>
+    {{else}}
+        <div class="card">
+            Nenhum dado encontrado
+        </div>
+    {{/if}}
+</div>
+<a href="http://localhost:8081/registrar"><button>Registrar um usuario novo</button></a>

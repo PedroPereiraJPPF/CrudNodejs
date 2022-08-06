@@ -1,0 +1,10 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+.usuarios{
+    width: auto;
+    height: 1000px;
+    margin: 0 auto 0 auto;
+    background-color: red;
+}
