@@ -1,0 +1,33 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+.form-cadastro{
+    height: 100px;
+    max-width: 700px;
+    position: relative;
+    left:50%;
+    transform: translateX(-50%);
+    margin-top: 100px;
+}
+.container{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+}
+.campo{
+    height: 35px;
+    width: 60%;
+    margin: 10px;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+textarea:focus, input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+.cadastrar{
+    height: 35px;
+    width: 300px;
+    margin: 10px;
+}

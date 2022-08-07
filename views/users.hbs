@@ -15,8 +15,8 @@
             <td>{{id}}</td>
             <td>{{nome}}</td>
             <td>{{email}}</td>
-            <td><button class="button verde">Editar</button></td>
-            <td><button class="button vermelho">Excluir</button></td>
+            <td><button class="button">Editar</button></td>
+            <td><button class="button">Excluir</button></td>
         </tr>
         </tbody>
         {{/each}}
@@ -26,5 +26,7 @@
             Nenhum dado encontrado
         </div>
     {{/if}}
+    <div class="rodape">
+        <a href="http://localhost:8081/registrar"><button class="button">Registrar um usuario novo</button></a>
+    </div>
 </div>
-<a href="http://localhost:8081/registrar"><button>Registrar um usuario novo</button></a>

@@ -4,6 +4,9 @@ const hbs = require('express-handlebars')
 const Usuario = require('./models/Usuario')
 const bodyParser = require('body-parser')
 
+// Config css
+app.use(express.static('public'))
+
 // configuração do handlebars
 app.engine('hbs', hbs.engine({
     extname: 'hbs',
@@ -12,9 +15,11 @@ app.engine('hbs', hbs.engine({
 app.set('view engine', 'hbs')
 app.set('views', __dirname+'/views');
 
+//Body parser config
 app.use(bodyParser.urlencoded({extended : false})) 
 app.use(bodyParser.json())
 
+// Rotas
 app.get('/', function(req, res){
     // Pegar registros do banco
     Usuario.findAll().then((valores)=>{
