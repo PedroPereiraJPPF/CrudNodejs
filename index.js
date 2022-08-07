@@ -22,7 +22,11 @@ app.use(bodyParser.json())
 // Rotas
 app.get('/', function(req, res){
     // Pegar registros do banco
-    Usuario.findAll().then((valores)=>{
+    Usuario.findAll({
+        order: [
+            ['nome', 'ASC']
+        ]
+    }).then((valores)=>{
         if(valores.length > 0){
             return res.render('users', {NavActiveUsers:true, table:true, usuarios: valores.map(valores => valores.toJSON())})
         }else{
@@ -82,7 +86,18 @@ app.post('/update', function(req, res){
             console.log(err)
         })
 })
-
+// deletar registros
+app.post('/excluir' , function(req, res){
+    Usuario.destroy({
+        where:{
+            id: req.body.id
+        }
+    }).then((retorno)=>{
+        return res.redirect('/')
+    }).catch((err)=>{
+        console.log(err)
+    })
+})
 
 app.listen(8081, ()=>{
     console.log('servidor rodando')

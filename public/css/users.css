@@ -29,4 +29,5 @@ td{
 .button{
     height: 30px;
     min-width: 80px;
+    margin: 0px;
 }
