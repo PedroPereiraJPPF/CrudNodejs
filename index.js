@@ -100,5 +100,5 @@ app.post('/excluir' , function(req, res){
 })
 
 app.listen(8081, ()=>{
-    console.log('servidor rodando')
+    console.log('servidor rodando na porta http://localhost:8081')
 })
