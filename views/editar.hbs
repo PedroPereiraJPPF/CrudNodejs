@@ -1,0 +1,14 @@
+{{#unless erro}}
+<div class="form-cadastro">
+<form action="/update" method="post">
+<div class="container">
+    <input type="hidden" name="id" value="{{id}}">
+    <input type="text" name="nome" id="nome" required class="campo" value = "{{nome}}">
+    <input type="email" name="email" id="email" required class="campo" value = {{email}}>
+    <button type="submit" class="cadastrar">editar</button>
+</div>    
+</form>
+</div>
+{{else}}
+    <h3>Houve um problema</h3>
+{{/unless}}

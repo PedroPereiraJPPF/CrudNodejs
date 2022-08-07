@@ -52,6 +52,37 @@ app.post('/cadastrar', function(req, res){
     })
 })
 
+// rota editar
+app.post('/editar', function(req, res){
+    var id = req.body.id
+    Usuario.findByPk(id).then((dados)=>{
+        return res.render('editar' , {erro:false, id: dados.id, nome: dados.nome, email: dados.email})
+    }).catch((err)=>{
+        console.log(err)
+        return res.render('editar', {erro:true, problema: 'Impossivel editar'})
+    })
+})
+app.post('/update', function(req, res){
+    var nome = req.body.nome
+    var email = req.body.email
+    // atualizar os registros
+    Usuario.update(
+        {
+        nome: nome,
+        email: email.toLowerCase()
+        },
+        {
+            where: {
+                id: req.body.id
+            }
+        }).then((resultado)=>{
+            console.log('o resultado foi: '+resultado)
+            return res.redirect('/')
+        }).catch((err)=>{
+            console.log(err)
+        })
+})
+
 
 app.listen(8081, ()=>{
     console.log('servidor rodando')
